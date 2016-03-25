@@ -101,7 +101,7 @@ body.shrink-player #ifplayer-player-wrapper {
 
 .popin-overlay .popin-wrapper .popin-contents button,
 .popin-overlay .popin-wrapper .popin-contents select {
-  font-family: 'geomanist-web', 'Geomanist', Arial, sans-serif;
+  font-family: Arial, sans-serif;
 }
 
 .popin-overlay .popin-wrapper .popin-contents .popin-actions {

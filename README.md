@@ -1,4 +1,4 @@
-<p style="color: red; font-style: bold;">
+<p style="color: red; font-weight: bold;">
 DO NOT USE IT FOR NOW, DEVELOPMENTS ARE NOT FINISHED.
 </p>
 

@@ -5,7 +5,8 @@ HTML5 Web Player for Webradios that is not intrusive.
 ## Documentation
 
 1. Call your player on your webpage by inserting this tag:
-  ```
+
+  ```html
   <script
     src="//mysite.com/player/ifplayer.js"
     data-settings="//mysite.com/player/ifpsettings.json"
@@ -14,8 +15,10 @@ HTML5 Web Player for Webradios that is not intrusive.
     [data-direct="true"]>
   </script>
   ```
+  
 2. Create ifpsettings.json
-  ```
+
+  ```json
   {
     "radio": {
       "name": "Utopic Radio",

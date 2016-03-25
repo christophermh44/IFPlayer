@@ -68,7 +68,7 @@
     background-color: rgba(0,0,0,0.54);
     bottom: 8px;
     color: #fff;
-    font-family: 'geomanist-web', 'Geomanist', sans-serif;
+    font-family: Arial, sans-serif;
     left: 142px;
     overflow: hidden;
     padding: 6px;

@@ -43,13 +43,15 @@ Coming soon…
   
   *NOTE: Just keep in mind that this kind of script can send the tags of a jingle or no tags if the music currently playing doesn't provide ones. So you will have to implement those cases by puting default tags (like your radio station as artist and your slogan as title, for example).*
   
-3. **Facebook and Twitter 
+3. **Facebook and Twitter automatic sharing links**
 
-3. **(Optional) Sound processing with JSSP**
+  Coming soon…
+
+4. **(Optional) Sound processing with JSSP**
   
   IFPlayer can be plugged to [JSSP](http://jssp.c-mh.fr). Read JSSP documentation to know how to provide the JSSP settings URL. If you don't use JSSP, IFPlayer will omit it.
   
-4. **Detailed settings (ifpsettings.json)**
+5. **Detailed settings (ifpsettings.json)**
 
   ```json
   {
@@ -87,7 +89,7 @@ Coming soon…
   - **options.shrinkable**: set to true if you want to allow visitors to shrink player (recommended)
   - **options.removable**: set to true if you want to allow visitors to remove the player from the website they are visiting (not recommended on your own website, but recommended on your partners websites)
 
-5. **Add it on your website**
+6. **Add it on your website**
 
   ```html
   <script

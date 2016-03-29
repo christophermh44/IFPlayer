@@ -22,12 +22,12 @@ Coming soon…
 
 ### For developers
 
-1. Requirements
+1. **Requirements**
 
   The player is developed in PHP. It has to be hosted on your server. You can create a folder on your website where you will put all files. Then, all of your websites and your partners websites can add it just by adding a script inside HTML sources.
   By the way to display tags, this player do recurrent AJAX calls to a script that you will have to implement (see below).
 
-2. Tags provider
+2. **Tags provider**
 
   Wherever you want on your server, you will have to put a small script (PHP or any other language else), that will prints out a small JSON object like that:
   
@@ -42,11 +42,11 @@ Coming soon…
   
   *NOTE: Just keep in mind that this kind of script can send the tags of a jingle or no tags if the music currently playing doesn't provide ones. So you will have to implement those cases by puting default tags (like your radio station as artist and your slogan as title, for example).*
 
-3. (Optional) Sound processing with JSSP
+3. **(Optional) Sound processing with JSSP**
   
   IFPlayer can be plugged to [JSSP](http://jssp.c-mh.fr). Read JSSP documentation to know how to provide the JSSP settings URL. If you don't use JSSP, IFPlayer will omit it.
   
-4. Detailed settings (ifpsettings.json)
+4. **Detailed settings (ifpsettings.json)**
 
   ```json
   {
@@ -84,7 +84,7 @@ Coming soon…
   - **options.shrinkable**: set to true if you want to allow visitors to shrink player (recommended)
   - **options.removable**: set to true if you want to allow visitors to remove the player from the website they are visiting (not recommended on your own website, but recommended on your partners websites)
 
-5. Add it on your website
+5. **Add it on your website**
 
   ```html
   <script

@@ -13,6 +13,7 @@ HTML5 Web Player for Webradios that is not intrusive.
 - By combinig iframes and History javascript API (no AJAX navigation), visitors will be able to navigate through the pages of your website with a continuous sound.
 - Ready in 1 hour max! Use IFPlayer for your website and your partners' ones.
 - Just include a small script and IFPlayer do the rest for you!
+- Automatic facebook and twitter share scripts
 
 ## Compatibility
 
@@ -41,6 +42,8 @@ Coming soon…
   Feel free to reuse this script everywhere you need to display the music's tags currently playing on your station. This JSON format is not fixed, so you can add fields like cover art URL, year, etc.
   
   *NOTE: Just keep in mind that this kind of script can send the tags of a jingle or no tags if the music currently playing doesn't provide ones. So you will have to implement those cases by puting default tags (like your radio station as artist and your slogan as title, for example).*
+  
+3. **Facebook and Twitter 
 
 3. **(Optional) Sound processing with JSSP**
   

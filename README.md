@@ -10,6 +10,7 @@ HTML5 Web Player for Webradios that is not intrusive.
 - Ready in 1 hour max! Use IFPlayer for your website and your partners' ones.
 - Just include a small script and IFPlayer do the rest for you!
 - Automatic facebook and twitter share scripts
+- Optional: automatic plug to [JSSP plugin](https://github.com/christophermh44/jssp)
 
 ## Compatibility
 

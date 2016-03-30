@@ -121,7 +121,7 @@
           var hideFor = body.getElementsByClassName('hide-for')[0];
           return hideFor.value;
         };
-        var title = settings.me.name + ' ' + __('is a partner of') + '<a target="_blank" href="' + settings.radio.url + '">' + settings.radio.name + '</a>.';
+        var title = settings.me.name + ' ' + __('is a partner of') + ' <a target="_blank" href="' + settings.radio.url + '">' + settings.radio.name + '</a>.';
         var body = '<label for="hide-for">' + __('How long do you want to hide this player?') + '</label>'
           + '<select id="hide-for" class="hide-for"><option value="1">1 ' + __('day') + '</option><option value="7">1 ' + __('week') + '</option><option value="30">1 ' + __('month') + '</option><option value="-1">' + __('Always') + '</option></select>';
         var popinOverlay = document.createElement('div');

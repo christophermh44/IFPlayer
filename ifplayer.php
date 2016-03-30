@@ -319,7 +319,7 @@
         $.getJSON('<?= $settings->urls->tags ?>', function(data) {
           $('.details__tags__artist').text(data.artist);
           $('.details__tags__title').text(data.title);
-          $('.share--facebook').attr('href', 'https://facebook.com/sharer/sharer.php?s=100&u=<?= $settings->urls->sharer ?>?v=' + (new Date));
+          $('.share--facebook').attr('href', 'https://facebook.com/sharer/sharer.php?s=100&u=' + document.location.protocol + '<?= $settings->urls->sharer ?>?v=' + (new Date));
           $('.share--twitter').attr('href', 'https://twitter.com/intent/tweet?text=En%20ce%20moment,%20j%27%C3%A9coute%20' + encodeURIComponent(data.title) + '%20de%20' + encodeURIComponent(data.artist) + '.<?= property_exists($settings->radio->twitter) ? '&via='.$settings->radio->twitter : '' ?>');
         });
       };

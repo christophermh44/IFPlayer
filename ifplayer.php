@@ -1,3 +1,8 @@
+<?php
+  $settingsFile = $_GET['_settings'];
+  $settings = json_decode(file_get_contents($settingsFile));
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -5,7 +10,7 @@
   <title>IF Player - Integrated player</title>
   <style>
   html, body {
-    background: <?= !empty($_GET['color']) ? $_GET['color'] : '#222222' ?>;
+    background: <?= !empty($_GET['_color']) ? $_GET['_color'] : '#222222' ?>;
     margin: 0;
     height: 48px;
     overflow: hidden;
@@ -209,18 +214,18 @@
   </style>
 </head>
 <body class="js-play-muted">
-  <audio id="audio" src="URL DE VOTRE FLUX" crossOrigin="anonymous"></audio>
+  <audio id="audio" src="<?= $settings->urls->stream ?>" crossOrigin="anonymous"></audio>
 
-  <a href="URL DE VOTRE SITE" target="_blank" title="(S'ouvre dans une nouvelle fenêtre)" class="logo">
-    <img src="LOGO DE VOTRE SITE" alt="">
+  <a href="<?= $settings->radio->url ?>" target="_blank" title="(S'ouvre dans une nouvelle fenêtre)" class="logo">
+    <img src="<?= $settings->radio->logo ?>" alt="">
   </a>
 
   <div class="controls">
     <div class="controls__play">
-      <button type="button" class="controls__play--playing" title="Mettre NOM DE VOTRE RADIO en sourdine">
+      <button type="button" class="controls__play--playing" title="Mettre <?= $settings->radio->name ?> en sourdine">
         <svg height="1000" width="928.571" viewBox="0 0 928.571 1000" xmlns="http://www.w3.org/2000/svg"><path d="M428.544 196.48v607.104q0 14.508 -10.602 25.11t-25.11 10.602 -25.11 -10.602l-185.814 -185.814h-146.196q-14.508 0 -25.11 -10.602t-10.602 -25.11v-214.272q0 -14.508 10.602 -25.11t25.11 -10.602h146.196l185.814 -185.814q10.602 -10.602 25.11 -10.602t25.11 10.602 10.602 25.11zm214.272 303.552q0 42.408 -23.715 78.957t-62.775 52.173q-5.58 2.79 -13.95 2.79 -14.508 0 -25.11 -10.323t-10.602 -25.389q0 -11.718 6.696 -19.809t16.182 -13.95 18.972 -12.834 16.182 -19.809 6.696 -31.806 -6.696 -31.806 -16.182 -19.809 -18.972 -12.834 -16.182 -13.95 -6.696 -19.809q0 -15.066 10.602 -25.389t25.11 -10.323q8.37 0 13.95 2.79 39.06 15.066 62.775 51.894t23.715 79.236zm142.848 0q0 85.374 -47.43 157.635t-125.55 105.183q-7.254 2.79 -13.95 2.79 -15.066 0 -25.668 -10.602t-10.602 -25.11q0 -21.762 21.762 -32.922 31.248 -16.182 42.408 -24.552 41.292 -30.132 64.449 -75.609t23.157 -96.813 -23.157 -96.813 -64.449 -75.609q-11.16 -8.37 -42.408 -24.552 -21.762 -11.16 -21.762 -32.922 0 -14.508 10.602 -25.11t25.11 -10.602q7.254 0 14.508 2.79 78.12 32.922 125.55 105.183t47.43 157.635zm142.848 0q0 128.34 -70.866 235.755t-188.604 158.193q-7.254 2.79 -14.508 2.79 -14.508 0 -25.11 -10.602t-10.602 -25.11q0 -20.088 21.762 -32.922 3.906 -2.232 12.555 -5.859t12.555 -5.859q25.668 -13.95 45.756 -28.458 68.634 -50.778 107.136 -126.666t38.502 -161.262 -38.502 -161.262 -107.136 -126.666q-20.088 -14.508 -45.756 -28.458 -3.906 -2.232 -12.555 -5.859t-12.555 -5.859q-21.762 -12.834 -21.762 -32.922 0 -14.508 10.602 -25.11t25.11 -10.602q7.254 0 14.508 2.79 117.738 50.778 188.604 158.193t70.866 235.755z"/></svg>
       </button>
-      <button type="button" class="controls__play--muted" title="Écouter NOM DE VOTRE RADIO">
+      <button type="button" class="controls__play--muted" title="Écouter <?= $settings->radio->name ?>">
         <svg height="1000" width="428.571" viewBox="0 0 428.571 1000" xmlns="http://www.w3.org/2000/svg"><path d="M428.544 196.48v607.104q0 14.508 -10.602 25.11t-25.11 10.602 -25.11 -10.602l-185.814 -185.814h-146.196q-14.508 0 -25.11 -10.602t-10.602 -25.11v-214.272q0 -14.508 10.602 -25.11t25.11 -10.602h146.196l185.814 -185.814q10.602 -10.602 25.11 -10.602t25.11 10.602 10.602 25.11z"/></svg>
       </button>
     </div>
@@ -242,8 +247,8 @@
     <div class="details">
       <div class="details__tags">
         <div class="details__tags__prefix">Vous écoutez&nbsp;: </div>
-        <div class="details__tags__artist">NOM DE VOTRE RADIO</div>
-        <div class="details__tags__title">SLOGAN DE VOTRE RADIO</div>
+        <div class="details__tags__artist"><?= $settings->radio->name ?></div>
+        <div class="details__tags__title"><?= $settings->radio->slogan ?></div>
       </div>
       <div class="details__banner">← Cliquez sur le haut-paleur pour écouter la radio</div>
     </div>
@@ -259,7 +264,9 @@
   </div>
 
   <script src="jquery.js"></script>
+  <?php if (property_exists($settings->urls, 'sp')): ?>
   <script src="jssp.js"></script>
+  <?php endif; ?>
   <script>
     (function(){
       var isMobileDevice = function() {
@@ -272,9 +279,11 @@
       }
 
       // FACULTATIF
+      <?php if (property_exists($settings->urls, 'sp')): ?>
       var audio = $('#audio').jssp({
-        settings: 'URL VERS JSON TRAITEMENT DE SON' // voir http://jssp.c-mh.fr/
+        settings: '<?= $settings->urls->sp ?>' // voir http://jssp.c-mh.fr/
       })[0];
+      <?php endif; ?>
 
       if (!isMobileDevice()) {
         audio.volume = 0;
@@ -307,12 +316,11 @@
       });
 
       var updateTags = function() {
-        $.getJSON('URL VERS LES TAGS DE LA MUSIQUE EN COURS DE DIFFUSION', function(data) { // DOIT RESPECTER UN FORMAT A DEFINIR
+        $.getJSON('<?= $settings->urls->tags ?>', function(data) {
           $('.details__tags__artist').text(data.artist);
           $('.details__tags__title').text(data.title);
-
-          $('.share--facebook').attr('href', 'https://facebook.com/sharer/sharer.php?s=100&u=http://utopicradio.com/share?v=' + (new Date));
-          $('.share--twitter').attr('href', 'https://twitter.com/intent/tweet?text=En%20ce%20moment,%20j%27%C3%A9coute%20' + encodeURIComponent(data.title) + '%20de%20' + encodeURIComponent(data.artist) + '.&via=utopicradio');
+          $('.share--facebook').attr('href', 'https://facebook.com/sharer/sharer.php?s=100&u=<?= $settings->urls->sharer ?>?v=' + (new Date));
+          $('.share--twitter').attr('href', 'https://twitter.com/intent/tweet?text=En%20ce%20moment,%20j%27%C3%A9coute%20' + encodeURIComponent(data.title) + '%20de%20' + encodeURIComponent(data.artist) + '.<?= property_exists($settings->radio->twitter) ? '&via='.$settings->radio->twitter : '' ?>');
         });
       };
 

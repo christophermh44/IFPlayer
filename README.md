@@ -45,7 +45,17 @@ Coming soon…
   
 3. **Facebook and Twitter automatic sharing links**
 
-  Coming soon…
+  Take a look at sharer.example.php. It's an example of an old file I was using to display everything that facebook needs to format a shared link (title, description, original website, picture, etc.)
+  It's just an example, you can start with it, but you will have to change many things like:
+  
+  - The name of your radio station
+  - The way to get music tags (hey, why don't use the Tags Provider you've just created?)
+  - The way to get album art
+  - etc.
+  
+  Once you have all of this information, fill every <meta> HTML tags with appropriate values. IFPlayer will do the rest for you: it gives the sharer script URL to facebook with a additionnal parameter (named "v" which value is the current timestamp, this parameter will force facebook to not use its cache and give the right tags every time you share a song).
+
+  Just a few words about Twitter: optionally, you will just have to configure your settings and set your radio twitter account. If you don't set this value, the pre-filled tweet won't end with "via @youraccount".
 
 4. **(Optional) Sound processing with JSSP**
   
@@ -82,7 +92,7 @@ Coming soon…
   - **radio.slogan**: Slogan of your radio
   - **radio.url**: URL of your radio website
   - **radio.logo**: URL of your radio logo (SVG accepted)
-  - **radio.twitter**: Twitter account (without the "@")
+  - **radio.twitter**: (optional) Twitter account (without the "@")
   - **urls.stream**: URL of your stream *(WARNING: if you can configure your Apache or Nginx server, create a proxy on a specific URL that will mask the usage of a port. Frequently, Shoutcast or Icecast servers stream sound on 8000, which is not accessible behind some firewalls.)*
   - **urls.tags**: URL of your tags provider (see above)
   - **urls.css**: URL of IFPlayer CSS
@@ -129,7 +139,7 @@ Now that you host your own awesome and wonderful webradio player, you can propos
   
 ## Todo
 
-- Complete documentation
+- Add compatibility details to documentation
 - Improve translations and multilingual
 - Probably other improvements about navigation detection
 

@@ -59,13 +59,15 @@ Coming soon…
       "name": "Utopic Radio",
       "slogan": "Ta webradio 200% smile",
       "url": "http://utopicradio.com/",
-      "logo": "http://utopicradio.com/logo.png"
+      "logo": "http://utopicradio.com/logo.png",
+      "twitter": "utopicradio"
     },
     "urls": {
       "stream": "//utopicradio.com/listen.mp3",
       "tags": "//utopicradio.com/tags",
       "css": "//utopicradio.com/player/ifplayer.css",
       "player": "//utopicradio.com/player/ifplayer.php",
+      "sharer": "//utopicradio.com/player/sharer.php",
       "sp": "//utopicradio.com/player/sp.php"
     },
     "options": {
@@ -80,10 +82,12 @@ Coming soon…
   - **radio.slogan**: Slogan of your radio
   - **radio.url**: URL of your radio website
   - **radio.logo**: URL of your radio logo (SVG accepted)
+  - **radio.twitter**: Twitter account (without the "@")
   - **urls.stream**: URL of your stream *(WARNING: if you can configure your Apache or Nginx server, create a proxy on a specific URL that will mask the usage of a port. Frequently, Shoutcast or Icecast servers stream sound on 8000, which is not accessible behind some firewalls.)*
   - **urls.tags**: URL of your tags provider (see above)
   - **urls.css**: URL of IFPlayer CSS
   - **urls.player**: URL of IFPlayer PHP script
+  - **urls.sharer**: URL of sharer for facebook (see above)
   - **urls.sp**: (optional) URL of your JSSP settings
   - **options.autoplay**: set to true if you want the player to play sound at page loading (not recommended)
   - **options.shrinkable**: set to true if you want to allow visitors to shrink player (recommended)

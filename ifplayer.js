@@ -215,7 +215,7 @@
       };
 
       var runPlayer = function() {
-        player.src = settings.urls.player + '?_settings=' + encodeURIComponent(settings.me.settings);
+        player.src = settings.urls.player + '?_settings=' + encodeURIComponent(settings.me.settings) + '&_color=' + encodeURIComponent(settings.me.color);
         player.onload = function(){
           if (settings.options.shrinkable && window.localStorage.getItem('__ifplayer.shrink') == 'shrink') {
             shrink();

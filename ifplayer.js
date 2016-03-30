@@ -65,7 +65,8 @@
       settings.me = {
         color: me.getAttribute('data-color') || '#222222',
         direct: me.getAttribute('data-direct') || false,
-        name: me.getAttribute('data-name') || __('This website')
+        name: me.getAttribute('data-name') || __('This website'),
+        settings: me.getAttribute('data-settings') || ''
       }
       return readyCallback(settings);
     });
@@ -214,7 +215,7 @@
       };
 
       var runPlayer = function() {
-        player.src = settings.urls.player + '?color=' + encodeURIComponent(settings.me.color);
+        player.src = settings.urls.player + '?_settings=' + encodeURIComponent(settings.me.settings);
         player.onload = function(){
           if (settings.options.shrinkable && window.localStorage.getItem('__ifplayer.shrink') == 'shrink') {
             shrink();

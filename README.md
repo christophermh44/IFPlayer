@@ -1,7 +1,3 @@
-<p style="color: red; font-weight: bold;">
-DO NOT USE IT FOR NOW, DEVELOPMENTS ARE NOT YET FINISHED, BUT IT WILL BE SOON!
-</p>
-
 # IFPlayer
 
 HTML5 Web Player for Webradios that is not intrusive.

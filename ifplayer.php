@@ -1,5 +1,5 @@
 <?php
-  $settingsFile = $_GET['_settings'];
+  $settingsFile = $_SERVER['REQUEST_SCHEME'].':'.$_GET['_settings'];
   $settings = json_decode(file_get_contents($settingsFile));
 ?>
 

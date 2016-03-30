@@ -263,7 +263,7 @@
     </a>
   </div>
 
-  <script src="jquery.js"></script>
+  <script src="//code.jquery.com/jquery-latest.min.js"></script>
   <?php if (property_exists($settings->urls, 'sp')): ?>
   <script src="jssp.js"></script>
   <?php endif; ?>

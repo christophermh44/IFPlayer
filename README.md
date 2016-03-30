@@ -1,4 +1,4 @@
-# IFPlayer
+# IFPlayer (1.0.0-beta)
 
 HTML5 Web Player for Webradios that is not intrusive.
 

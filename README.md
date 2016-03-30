@@ -55,7 +55,7 @@ Coming soon…
 
 4. **(Optional) Sound processing with JSSP**
   
-  IFPlayer can be plugged to [JSSP](http://jssp.c-mh.fr). Read JSSP documentation to know how to provide the JSSP settings URL. If you don't use JSSP, IFPlayer will omit it.
+  IFPlayer can be plugged to [JSSP](http://jssp.c-mh.fr). You will have to download JSSP script and create your own sound processing on your server. Read JSSP documentation to know how to provide the JSSP settings URL. If you don't use JSSP, IFPlayer will omit it.
   
 5. **Detailed settings (ifpsettings.json)**
 
@@ -95,6 +95,7 @@ Coming soon…
   - **urls.css**: URL of IFPlayer CSS
   - **urls.player**: URL of IFPlayer PHP script
   - **urls.sharer**: URL of sharer for facebook (see above)
+  - **urls.jssp**: URL of JSSP script (you will have to download this script on your server)
   - **urls.sp**: (optional) URL of your JSSP settings
   - **options.autoplay**: set to true if you want the player to play sound at page loading (not recommended)
   - **options.shrinkable**: set to true if you want to allow visitors to shrink player (recommended)

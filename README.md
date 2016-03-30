@@ -74,6 +74,7 @@ Coming soon…
       "css": "//utopicradio.com/player/ifplayer.css",
       "player": "//utopicradio.com/player/ifplayer.php",
       "sharer": "//utopicradio.com/player/sharer.php",
+      "jssp": "//utopicradio.com/player/jssp.js",
       "sp": "//utopicradio.com/player/sp.php"
     },
     "options": {

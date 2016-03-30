@@ -21,15 +21,15 @@
   // ajax query helper
   var ajaxQuery = function ajaxQuery(url, params, success, error) {
     var req = new XMLHttpRequest();
-    req.open('GET', url, false);
+    req.open('GET', url);
     req.onreadystatechange = function() {
       if (req.readyState == 4) {
         if (req.status == 200) {
-          success(req);
+          if (success) success(req);
           return;
         }
       }
-      error(req);
+      if (error) error(req);
     }
     req.send(params);
   };
@@ -53,14 +53,15 @@
           me = script;
         }
       }
-    )();
+      return me;
+    })();
 
     var settingsFile = me.getAttribute('data-settings');
     if (!settingsFile) {
       throw new Exception('Couldn\'t initialize player: settings not found.');
     }
 
-    req(settingsFile, function success(req) {
+    ajaxQuery(settingsFile, function success(req) {
       var settings = JSON.parse(req.responseText);
       settings.me = {
         color: me.getAttribute('data-color') || '#222222',
@@ -75,6 +76,7 @@
   // Automatic close request
   var hasToClose = function hasToClose() {
     var hasToClose = window.localStorage.getItem('__ifplayer.close');
+    var now = +new Date;
     // Permanent hide player
     if (hasToClose == '-1') {
       window.localStorage.setItem('__ifplayer.close', '-1');
@@ -161,7 +163,7 @@
       };
 
       var runNavigation = function(callback) {
-        var inclusionParam: '__ifplayer=1';
+        var inclusionParam = '__ifplayer=1';
         var origin = '//' + document.location.hostname;
         var url = document.location.href + (document.location.href.indexOf('?') >= 0 ? '&' : '?') + inclusionParam;
         navigation.src = url;

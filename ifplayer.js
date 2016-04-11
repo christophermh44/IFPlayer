@@ -61,7 +61,7 @@
       throw new Exception('Couldn\'t initialize player: settings not found.');
     }
 
-    ajaxQuery(settingsFile, function success(req) {
+    ajaxQuery(settingsFile, {}, function success(req) {
       var settings = JSON.parse(req.responseText);
       settings.me = {
         color: me.getAttribute('data-color') || '#222222',
